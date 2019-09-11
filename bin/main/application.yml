@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://0.0.0.0:3369/tenant?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: xchange4
+    password: asyx436
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        ejb:
+          interceptor: id.dias.tenant.TenantInterceptor
