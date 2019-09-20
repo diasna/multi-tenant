@@ -29,6 +29,7 @@ import id.dias.tenant.TenantSupport;
 public class Inventory implements TenantSupport, Serializable {
 
     private static final long serialVersionUID = -6602497631361693980L;
+
     @Column(name = "tenant_id")
     private String tenantId;
 
@@ -38,7 +39,7 @@ public class Inventory implements TenantSupport, Serializable {
             strategy = "org.hibernate.id.UUIDGenerator")
     private String uuid;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "name")
     private String name;
 
     public String getTenantId() {

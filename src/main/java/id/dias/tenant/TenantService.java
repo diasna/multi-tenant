@@ -19,10 +19,14 @@ import id.dias.tenant.user.User;
 @Service
 public abstract class TenantService {
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     Serializable getCurrentTenantIdentifer() {
         return ((User) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal()).getTenantId();
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
     }
 }

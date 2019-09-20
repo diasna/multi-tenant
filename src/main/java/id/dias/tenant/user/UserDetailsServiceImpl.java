@@ -1,7 +1,6 @@
 /* Copyright (C) 2019 ASYX International B.V. All rights reserved. */
 package id.dias.tenant.user;
 
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
+    public SecurityUser loadUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 }

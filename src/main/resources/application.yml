@@ -11,3 +11,5 @@ spring:
       hibernate:
         ejb:
           interceptor: id.dias.tenant.TenantInterceptor
+server:
+  port: 6969

@@ -15,7 +15,6 @@ import org.hibernate.annotations.FilterDef;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.ParamDef;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import id.dias.tenant.TenantSupport;
 
@@ -29,7 +28,7 @@ import id.dias.tenant.TenantSupport;
 @FilterDef(name = "tenantFilter",
         parameters = { @ParamDef(name = "tenantId", type = "string") })
 @Filter(name = "tenantFilter", condition = "tenant_id = :tenantId")
-public class User implements TenantSupport, UserDetails, Serializable {
+public class User implements TenantSupport, SecurityUser, Serializable {
 
     private static final long serialVersionUID = 8558517047510959941L;
 

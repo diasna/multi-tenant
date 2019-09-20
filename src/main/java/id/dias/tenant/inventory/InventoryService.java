@@ -10,5 +10,10 @@ import org.springframework.data.domain.Pageable;
  * @since
  */
 public interface InventoryService {
+    Inventory create(Inventory inventory);
+
     Page<Inventory> search(String name, Pageable pageable);
+
+    Page<Inventory> searchWithPreDefinedTenant(String tenantId, String name,
+            Pageable pageable);
 }

@@ -30,4 +30,16 @@ public class InventoryServiceImpl extends TenantService
         return inventoryRepository.search(name, pageable);
     }
 
+    @Override
+    @ReadsTenantData
+    public Page<Inventory> searchWithPreDefinedTenant(String tenantId,
+            String name, Pageable pageable) {
+        return inventoryRepository.search(name, pageable);
+    }
+
+    @Override
+    @Transactional
+    public Inventory create(Inventory inventory) {
+        return inventoryRepository.save(inventory);
+    }
 }

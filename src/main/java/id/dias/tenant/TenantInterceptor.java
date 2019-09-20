@@ -44,7 +44,7 @@ public class TenantInterceptor extends EmptyInterceptor {
             for (int index = 0; index < propertyName.length; index++) {
                 if (propertyName[index].equals("tenantId")) {
                     state[index] = ((User) SecurityContextHolder.getContext()
-                            .getAuthentication()).getTenantId();
+                            .getAuthentication().getPrincipal()).getTenantId();
                     return true;
                 }
             }
