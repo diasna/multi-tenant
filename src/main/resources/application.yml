@@ -1,9 +1,9 @@
 spring:
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://0.0.0.0:3369/tenant?useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: xchange4
-    password: asyx436
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:~/tenant
+    username: sa
+    password: password
   jpa:
     hibernate:
       ddl-auto: update
